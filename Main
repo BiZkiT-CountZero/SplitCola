@@ -1,0 +1,38 @@
+package com.gmail.bizkit245;
+
+import java.util.ArrayDeque;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		ArrayDeque<String> queue = new ArrayDeque<>();
+
+		queue.add("Sheldon");
+		queue.add("Leonard");
+		queue.add("Volovitc");
+		queue.add("Kutrapalli");
+		queue.add("Penny");
+
+		System.out.println("Queue status at the beginning:");
+		System.out.println(queue);
+
+		System.out.println();
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("How many glasses the device issued?");
+		int glass = sc.nextInt();
+
+		for (int i = 0; i < glass; i++) {
+			queue.add(queue.getFirst());
+			queue.add(queue.pollFirst());
+		}
+
+		System.out.println();
+		System.out.println("Queue status after issue " + glass + " сola glasses");
+		System.out.println(queue);
+		sc.close();
+	}
+
+}
